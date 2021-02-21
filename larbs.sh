@@ -189,6 +189,12 @@ newperms "%wheel ALL=(ALL) NOPASSWD: ALL"
 grep -q "^Color" /etc/pacman.conf || sed -i "s/^#Color$/Color/" /etc/pacman.conf
 grep -q "ILoveCandy" /etc/pacman.conf || sed -i "/#VerbosePkgLists/a ILoveCandy" /etc/pacman.conf
 
+#changing to a better gpg keyserver and using all cores for makepkg
+dialog --title "LARBS Installation" --infobox "Changing to a better gpg-keyserver and using all cores for compiling packages (both good for the AUR)" 5 70
+
+# change to a better keyserver
+mkdir ~/.gnupg && echo "keyserver hkps://keyserver.ubuntu.com" > ~/.gnupg/dirmngr.conf
+
 # Use all cores for compilation.
 sed -i "s/-j2/-j$(nproc)/;s/^#MAKEFLAGS/MAKEFLAGS/" /etc/makepkg.conf
 
