@@ -203,6 +203,10 @@ installationloop
 dialog --title "LARBS Installation" --infobox "Finally, installing \`libxft-bgra\` to enable color emoji in suckless software without crashes." 5 70
 yes | sudo -u "$name" $aurhelper -S libxft-bgra-git >/dev/null 2>&1
 
+# Install beautiful wallpapers from distrotube in ~/Wallpapers
+dialog --title "LARBS Installation" --infobox "Now, downloading distrotubes beautiful wallpaper collection in ~/Wallpapers..." 5 70
+git clone "https://gitlab.com/dwt1/wallpapers.git" "home/$name"
+
 # Install the dotfiles in the user's home directory
 putgitrepo "$dotfilesrepo" "/home/$name" "$repobranch"
 rm -f "/home/$name/README.md" "/home/$name/LICENSE" "/home/$name/FUNDING.yml"
