@@ -26,7 +26,7 @@ A,picom-jonaburg-git,"sexy but heavy compositor with advanced blur, rounded corn
 ,gnome-keyring,"serves as the system keyring."
 A,gtk-theme-arc-gruvbox-git,"gives the dark GTK theme used in LARBS."
 A,matcha-gtk-theme,"a modern dark gtk theme in several colors."
-A,tela-icon-theme,"a modern icon theme with a flat and sleek design in several colors."
+A,tela-icon-theme-git,"a modern icon theme with a flat and sleek design in several colors."
 ,neovim,"a tidier vim with some useful features"
 ,mpd,"is a lightweight music daemon."
 ,mpc,"is a terminal interface for mpd."
