@@ -16,20 +16,22 @@ That's it.
 LARBS is a script that autoinstalls and autoconfigures a fully-functioning
 and minimal terminal-and-vim-based Arch Linux environment.
 
-LARBS can be run on a fresh install of Arch or Artix Linux, and provides you
+LARBS can be run on a fresh install of Arch, Artix or Obarun Linux, and provides you
 with a fully configured diving-board for work or more customization.
 
 ## Customization
 
 By default, LARBS uses the programs [here in progs.csv](progs.csv) and installs
-[my dotfiles repo (voidrice) here](https://github.com/lukesmithxyz/voidrice),
-but you can easily change this by either modifying the default variables at the
+[my forked dotfiles repo from luke to fit my own larbs fork (my voidrice fork) here](https://github.com/kennethbakken/voidrice)
+My fork of LARBS works without any options for my fork of voidrice, but you can still change this by either modifying the default variables at the
 beginning of the script or giving the script one of these options:
 
 - `-r`: custom dotfiles repository (URL)
 - `-p`: custom programs list/dependencies (local file or URL)
 - `-a`: a custom AUR helper (must be able to install with `-S` unless you
   change the relevant line in the script
+ 
+But if you are going to use your own dotfiles anyway, there is no point of using my fork of larbs. But if you still want my progs.csv you can use luke's larbs with the -p option to this [link](https://raw.githubusercontent.com/kennethbakken/LARBS/master/progs.csv)
 
 ### The `progs.csv` list
 
