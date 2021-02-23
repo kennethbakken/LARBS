@@ -189,6 +189,10 @@ newperms "%wheel ALL=(ALL) NOPASSWD: ALL"
 grep -q "^Color" /etc/pacman.conf || sed -i "s/^#Color$/Color/" /etc/pacman.conf
 grep -q "ILoveCandy" /etc/pacman.conf || sed -i "/#VerbosePkgLists/a ILoveCandy" /etc/pacman.conf
 
+# Install beautiful wallpapers from distrotube in ~/Wallpapers
+dialog --title "LARBS Installation" --infobox "Now, downloading distrotubes beautiful wallpaper collection in ~/wallpapers..." 5 70
+git clone "https://gitlab.com/dwt1/wallpapers.git"
+
 #changing to a better gpg keyserver and using all cores for makepkg
 dialog --title "LARBS Installation" --infobox "Changing to a better gpg-keyserver and using all cores for compiling packages (both good for the AUR)" 5 70
 
@@ -209,9 +213,6 @@ installationloop
 dialog --title "LARBS Installation" --infobox "Finally, installing \`libxft-bgra\` to enable color emoji in suckless software without crashes." 5 70
 yes | sudo -u "$name" $aurhelper -S libxft-bgra-git >/dev/null 2>&1
 
-# Install beautiful wallpapers from distrotube in ~/Wallpapers
-dialog --title "LARBS Installation" --infobox "Now, downloading distrotubes beautiful wallpaper collection in ~/Wallpapers..." 5 70
-git clone "https://gitlab.com/dwt1/wallpapers.git" "home/$name"
 
 # Install the dotfiles in the user's home directory
 putgitrepo "$dotfilesrepo" "/home/$name" "$repobranch"
